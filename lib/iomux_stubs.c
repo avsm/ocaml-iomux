@@ -1,3 +1,10 @@
+#include "config.h"
+#include <caml/bigarray.h>
+#include <caml/memory.h>
+#include <caml/mlvalues.h>
+#include <caml/unixsupport.h>
+#include <caml/signals.h>
+
 #ifdef IS_WINDOWS
 #include <winsock2.h>
 #include <ws2tcpip.h>
@@ -11,14 +18,6 @@
 #endif
 
 #include <errno.h>
-
-#include <caml/bigarray.h>
-#include <caml/memory.h>
-#include <caml/mlvalues.h>
-#include <caml/unixsupport.h>
-#include <caml/signals.h>
-
-#include "config.h"
 
 #ifdef IS_WINDOWS
 /* Windows uses WSAPOLLFD which is compatible with pollfd layout */
