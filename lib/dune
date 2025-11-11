@@ -1,5 +1,5 @@
 (rule
- (targets config.ml config.h)
+ (targets config.ml config.h c_library_flags.sexp)
  (action
   (run ./include/discover.exe)))
 
@@ -21,4 +21,7 @@
     "-Wcast-qual"
     "-Wsign-compare"
     "-Werror")
-  (names iomux_stubs)))
+  (names iomux_stubs))
+ (c_library_flags
+  (:standard
+   (:include c_library_flags.sexp))))
